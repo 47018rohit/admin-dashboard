@@ -1,0 +1,206 @@
+@import url('https://fonts.googleapis.com/css2?family=Exo+2&display=swap');
+*{
+    margin: 0; padding: 0;
+    box-sizing: border-box;
+    font-family: 'Exo 2', sans-serif;
+    color: white;
+    transition: .1s;
+}
+:root{
+    --backgroundcolor:rgba(255, 255, 255, 0.073) ;
+    --filter:blur(3px);
+    --boxshadow: 1px 1px 4px 1px #0000002c;
+}
+
+.container{
+    background-image: url("images/background.png");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: grid;
+    width: 100vw;height: 100vh; 
+    grid-template-columns: repeat(1,minmax(200px,1fr)) repeat(1,minmax(300px,3fr)) repeat(1,1fr);
+    grid-template-rows: repeat(1,1fr) repeat(2,2fr);
+    gap: 10px; 
+    overflow: auto;
+}
+.container>div:not(.project){
+    background-color: var(--backgroundcolor);
+    backdrop-filter: var(--filter);
+    box-shadow: var(--boxshadow);
+    overflow: auto;
+    
+}
+/* Sidebar */
+.sidebar{
+    text-align: center;
+    grid-row:1/4;
+    border-right:1px solid rgba(255, 255, 255, 0.319);
+    
+}
+.logo  {
+    margin-top: 5%;
+    width: 100%;height: 15%;
+}
+.logo img{
+    width:40%;height: auto;
+}
+ul{
+    margin-top: 10%;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    height: 50%;width: 100%;
+    justify-content: space-evenly;
+    
+}
+li{
+    padding-top: 7%;
+    font-size: larger;
+    list-style: none;
+    height: 90%;
+}
+li:hover{
+    background-color: rgba(214, 214, 214, 0.224);
+    color: rgb(29, 195, 217);
+}
+.repository>img{
+    width: 50px;height: auto;
+    margin-top: 50%;
+}
+
+/* Header */
+.header{
+    grid-column: 2/4;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.356);
+}
+.header>div{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    width: 85%;
+    max-width: 90%;
+}
+button:hover{
+    background-color: rgba(255, 217, 0, 0.357);
+    color: rgb(29, 195, 217);
+}
+
+form{
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+form button{
+    padding: .1rem;
+    width: 50px;
+    border-radius: 2rem;
+    border: 1px solid rgba(245, 245, 245, 0.361);
+    background-color: var(--backgroundcolor);
+    backdrop-filter: var(--filter);
+}
+form>button>img{
+    margin-top: 3px;
+    height: 20px;
+    width: auto;
+}
+form>input{
+    
+    width: 20vw;
+    height: 30px;
+    border-radius: 2rem;
+    border: 1px solid rgba(128, 128, 128, 0.463);
+    
+}
+.header>div>div>img{
+    width: 70px;
+    height: 70px;
+}
+.user{
+    display: flex;
+    gap: 20px;
+    align-items: center;
+    text-align: center;
+}
+.user>img{
+    aspect-ratio: 1;
+    width: 100px;
+    border-radius: 50%;
+    box-shadow: 1px 3px 10px 1px rgba(0, 0, 0, 0.542);
+}
+button{
+    font-size: 15px;
+    width: 100px;height: 30px;
+    border: 1px solid rgba(255, 255, 255, 0.307);
+    border-radius: 2rem;
+    background-color: rgba(0, 0, 255, 0.162);
+}
+
+/* Project */
+.project{
+    grid-column: 2/3;
+    grid-row: 2/4;
+    border-radius: 1rem;
+    display: grid;
+    gap:10px;
+    padding: 3%;
+    justify-content: center;
+    grid-template-columns: repeat(auto-fit, clamp(250px , 40% , 350px));
+}
+.project>div{
+    border: 1px solid rgba(255, 255, 255, 0.17);
+    background-color: rgba(0, 0, 0, 0.131);
+    backdrop-filter: blur(10px);
+    box-shadow: var(--boxshadow);
+    border-radius: .5rem;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    text-align: center;
+    font-size:xx-large;
+    display: flex;
+    flex-direction: column;align-items: center;justify-content: center;
+}
+
+.calculator:hover {
+    background-image: url("images/calc.png");
+}
+.etch-a-sketch:hover{
+    background-image: url("images/sketchpad.png");
+    
+}
+.rps:hover{
+    background-image: url("images/RPS.png");
+    
+}
+.sign-in:hover{
+    background-image: url("images/sign-in.png");
+    
+}
+.view,.source{
+    opacity: 20%;
+}
+.view:hover, .source:hover{
+    opacity:70%;
+}
+
+/* Announcement */
+.clock{
+    /* height: fit-content; */
+    grid-column: 3/4;
+    border-radius: 1rem;
+}
+
+/* trending */
+.trending{
+    grid-column: 3/4;
+    border-radius: 1rem;
+
+}
+
